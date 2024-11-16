@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheelchairs Using Sensors</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .navbar { display: flex; justify-content: center; background-color: #333; padding: 10px; }
+        .navbar a {
+            color: white; text-decoration: none; padding: 10px 20px; margin: 5px;
+            background-color: #555; border-radius: 5px; transition: background-color 0.3s;
+        }
+        .navbar a:hover { background-color: #777; }
+        .page { display: none; text-align: center; padding: 50px; height: 100vh; color: white; }
+        #home { background-color: #264653; }
+        #components { background-color: #2a9d8f; }
+        #methodology { background-color: #f4a261; }
+        #working { background-color: #e76f51; }
+        .active { display: block; }
+        img { 
+            max-width: 20%; /* Reduced image size */
+            border-radius: 10px; 
+            margin: 20px 0; 
+        }
+        video { max-width: 70%; border-radius: 10px; margin: 20px 0; }
+        ul { list-style-type: none; padding: 0; }
+        ul li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home" onclick="showPage('home')">Home</a>
+        <a href="#components" onclick="showPage('components')">Components Required</a>
+        <a href="#methodology" onclick="showPage('methodology')">Methodology</a>
+        <a href="#working" onclick="showPage('working')">Working Model</a>
+    </div>
+
+    <!-- Pages -->
+    <div id="home" class="page active">
+        <h1>Wheelchairs Using Sensors</h1>
+        <img src="IMG_20241018_094539.jpg" alt="Project Image">
+        <p>Done by K. Rakshana Sri</p>
+    </div>
+
+    <div id="components" class="page">
+        <h1>Components Required</h1>
+        <ul>
+            <li>ATmega8 Microcontroller</li>
+            <li>Voice Control App</li>
+            <li>Bluetooth Module</li>
+            <li>IR Sensors</li>
+            <li>Relays</li>
+            <li>Motors</li>
+        </ul>
+    </div>
+
+    <div id="methodology" class="page">
+        <h1>Methodology</h1>
+        <p>
+            <strong>Step-by-step Process:</strong>
+            <ul>
+                <li>ATmega8 Microcontroller processes voice commands and gestures.</li>
+                <li>Bluetooth connects a mobile app to control movements.</li>
+                <li>Relays manage motor operations based on signals.</li>
+                <li>IR Sensors detect obstacles in the path.</li>
+                <li>Two main parts: transmitter (user's hand) and receiver (chair).</li>
+            </ul>
+        </p>
+    </div>
+
+    <div id="working" class="page">
+        <h1>Working Model</h1>
+        <video controls>
+            <source src="WORKING VIDEO OF WHEELCHAIRS USING SENSORS.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+        <img src="IMG_20241018_094539.jpg" alt="Working Image">
+    </div>
+
+    <script>
+        // JavaScript to toggle between pages
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
